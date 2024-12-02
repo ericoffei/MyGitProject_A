@@ -40,8 +40,8 @@ void dman_init(DMAMN *siop)
 	// Configure DMA Stream
 	siop -> stream->CR &= ~DMA_SxCR_EN; // Disable DMA
     // Reset DMA2 Stream 0 and wait until the stream is disabled
-    DMA2_Stream0->CR = 0x00;
-    while(DMA2_Stream0->CR & DMA_SxCR_EN) {;}
+    siop -> stream->CR = 0x00;
+    while(siop -> stream->CR & DMA_SxCR_EN) {;}
 
 
    // Select Circular mode
